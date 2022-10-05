@@ -28,3 +28,10 @@ Here are the tools I'm using
   - ```python -mimatlab install```
     - This should result in a success
 
+## Notes:
+1. You will need to change the ratelimit for Jupyter to visualize larger EEGLAB objects. Follow the steps here:
+    - https://stackoverflow.com/questions/43288550/iopub-data-rate-exceeded-in-jupyter-notebook-when-viewing-image
+    - ```jupyter notebook --generate-config```
+        - edit this file
+        - search for ```c.NotebookApp.iopub_data_rate_limit```
+        - uncomment this and set the value to: ```=1.0e10```
