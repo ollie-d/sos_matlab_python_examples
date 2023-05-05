@@ -30,6 +30,10 @@ Here are the tools I'm using
     ```PowerShell
     conda install sos sos-pbs sos-notebook jupyterlab-sos sos-papermill sos-python sos-matlab -c conda-forge
     ```
+  - It may be redundant, but also pip install sos-matlab in order to get dependent packages via:
+    ```PowerShell
+    pip install sos-matlab
+    ```
   - Source: https://vatlab.github.io/sos-docs/running.html#Conda-installation
 <!--
 6. Follow video setup of installing MATLAB kernel for jupyter
