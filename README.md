@@ -10,18 +10,27 @@ Here are the tools I'm using
 - MATLAB: R2022b (9.13.0.2049777 )
 
 ## Installation Steps
-1. Install and activate MATLAB
-2. Install miniconda3 or anaconda3 (I use miniconda)
-3. Create an environment for MATLAB in miniconda and activate
-  - ```conda create -n "sos" python=3.10```
-  - ```conda activate sos```
-4. Point MATLAB to your conda environment
-  - ```pyversion('C:\Users\<user>\miniconda3\envs\matlab\python.exe');```
-  - ```pyenv('ExecutionMode', 'OutOfProcess');```
-5. Follow basic setup of SoS with anaconda
-  - run: ```conda install sos sos-pbs sos-notebook jupyterlab-sos sos-papermill sos-python sos-matlab -c conda-forge```
-  - link: https://vatlab.github.io/sos-docs/running.html#Conda-installation
-  - Install the Python sos kernels
+### 1. Install and activate MATLAB
+### 2. Install miniconda3 or anaconda3 (I use miniconda) and open anaconda terminal
+  - Note: Run the terminal in administrator or elevated permission (depending on your OS)
+### 3. Create an environment for MATLAB in miniconda and activate
+  - ```PowerShell
+    conda create -n "sos" python=3.10
+    ```
+  - ```PowerShell
+    conda activate sos
+     ```
+### 4. (In MATLAB console) Point MATLAB to your conda environment
+  - ```MATLAB
+    pyversion('C:\Users\<user>\miniconda3\envs\matlab\python.exe');
+    pyenv('ExecutionMode', 'OutOfProcess');
+    ```
+### 5. Install SoS and Python and MATLAB subkernels via
+  - run in conda terminal: 
+    ```PowerShell
+    conda install sos sos-pbs sos-notebook jupyterlab-sos sos-papermill sos-python sos-matlab -c conda-forge
+    ```
+  - Source: https://vatlab.github.io/sos-docs/running.html#Conda-installation
 <!--
 6. Follow video setup of installing MATLAB kernel for jupyter
   deviation: The video is old and does not provide the correct way of install the matlab environment. Follow the steps here:
@@ -31,24 +40,37 @@ Here are the tools I'm using
   - ```python -mimatlab install```
     - This should result in a success
 -->
-6. Install the MATLAB engine to Python (note that official documentation is deprecated on MathWorks and SoS websites now)
-  - In conda run: `python -m pip install matlabengine==9.13.7`
-  - To test that this worked execute the following code:
-    - ```import matlab.engine```
-    - ```eng = matlab.engine.start_matlab()```
-    - ```eng.isprime(37)```
+### 6. Install the MATLAB engine to Python (note that official documentation is deprecated on MathWorks and SoS websites now)
+  - In conda terminal run: 
+   ```PowerShell
+   python -m pip install matlabengine==9.13.7
+   ```
+  - To test that this worked, first activate Python in the conda terminal via:
+  - ```PowerShell
+    python
+    ```
+  - Then execute the following code:
+    ```Python
+    import matlab.engine
+    eng = matlab.engine.start_matlab()
+    eng.isprime(37)
+    ```
       - This should return ```True```. If there were errors, troubleshoot at https://github.com/mathworks/matlab-engine-for-python
-    - Exit Python with ```exit()``` but keep terminal open.
-7. Install imatlab
-  - ```pip install imatlab```
+  - Exit Python with ```exit()``` but keep terminal open.
+### 7. (still in conda terminal) Install imatlab
+  - ```PowerShell
+    pip install imatlab
+    ```
 <!--
 8. Install SoS MATLAB Subkernel
   - ```pip install sos-matlab```
 -->
-8. Finish installation by installing mimatlab (required administrator privledge)
+### 8. Finish installation by installing mimatlab (required administrator privledge)
   - If you did not open your terminal with elevated access, please do so now and re-activate sos via ```conda activate sos```
-  - ```python -mimatlab install```
-9. Confirm that the installation works by running the example/test_installation notebook and running each cell.
+  - ```PowerShell
+    python -mimatlab install
+    ```
+### 9. Confirm that the installation works by running the example/test_installation notebook and running each cell.
 
 ## Notes:
 1. You will need to change the ratelimit for Jupyter to visualize larger EEGLAB objects. Follow the steps here:
