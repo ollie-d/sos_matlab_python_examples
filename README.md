@@ -28,9 +28,8 @@ Here are the tools I'm using
 ### 5. Install SoS and Python and MATLAB subkernels via
   - run in conda terminal: 
     ```PowerShell
-    conda install sos sos-pbs sos-notebook jupyterlab-sos sos-papermill sos-python sos-matlab -c conda-forge
+    conda install sos sos-pbs sos-notebook jupyterlab-sos sos-papermill sos-python -c conda-forge
     ```
-  - It may be redundant, but also pip install sos-matlab in order to get dependent packages via:
     ```PowerShell
     pip install sos-matlab
     ```
@@ -61,20 +60,21 @@ Here are the tools I'm using
     ```
       - This should return ```True```. If there were errors, troubleshoot at https://github.com/mathworks/matlab-engine-for-python
   - Exit Python with ```exit()``` but keep terminal open.
-### 7. (still in conda terminal) Install imatlab
+### 7. (still in conda terminal) Install `matlab_kernel`
   - ```PowerShell
-    pip install imatlab
+    pip install matlab_kernel
     ```
 <!--
 8. Install SoS MATLAB Subkernel
   - ```pip install sos-matlab```
--->
+
 ### 8. Finish installation by installing mimatlab (required administrator privledge)
   - If you did not open your terminal with elevated access, please do so now and re-activate sos via ```conda activate sos```
   - ```PowerShell
     python -mimatlab install
     ```
-### 9. Confirm that the installation works by running the example/test_installation notebook and running each cell.
+-->
+### 8. Confirm that the installation works by running the example/test_installation notebook and running each cell.
   - Open a Jupyter Notebook in conda terminal via:
   ```PowerShell
   jupyter notebook
