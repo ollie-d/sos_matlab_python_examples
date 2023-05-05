@@ -71,6 +71,10 @@ Here are the tools I'm using
     python -mimatlab install
     ```
 ### 9. Confirm that the installation works by running the example/test_installation notebook and running each cell.
+  - Open a Jupyter Notebook in conda terminal via:
+  ```PowerShell
+  jupyter notebook
+  ```
 
 ## Notes:
 1. You will need to change the ratelimit for Jupyter to visualize larger EEGLAB objects. Follow the steps here:
